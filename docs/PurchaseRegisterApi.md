@@ -1,6 +1,6 @@
 # HlConnector.PurchaseRegisterApi
 
-All URIs are relative to *https://hlconnect-api-sandbox.mu.se*
+All URIs are relative to *https://hlconnect-api.mu.se*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------

@@ -32,11 +32,11 @@ class ApiClient {
      * Overrides the default value set in spec file if present
      * @param {String} basePath
      */
-    constructor(basePath = 'https://hlconnect-api-sandbox.mu.se') {
+    constructor(basePath = 'https://hlconnect-api.mu.se') {
         /**
          * The base URL against which to resolve every API call's (relative) path.
          * @type {String}
-         * @default https://hlconnect-api-sandbox.mu.se
+         * @default https://hlconnect-api.mu.se
          */
         this.basePath = basePath.replace(/\/+$/, '');
 
@@ -595,8 +595,12 @@ class ApiClient {
     hostSettings() {
         return [
             {
-              'url': "https://hlconnect-api-sandbox.mu.se",
-              'description': "No description provided",
+              'url': "https://hlconnect-api.mu.se",
+              'description': "LIVE Environment server",
+            },
+            {
+              'url': "http://hlconnect-api-sandbox.mu.se",
+              'description': "SANDBOX Environment server",
             }
       ];
     }
