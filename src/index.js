@@ -1,6 +1,6 @@
 /**
- * HL Connector
- * HL Connector provides a simplified API interface to Hal Leonard's Digital Asset Management (DAM) system. This API enables vendors to integrate with Hal Leonard's digital content distribution platform to purchase registrations, download, and manage digital sheet music and other media assets
+ * HL Connect
+ * HL Connect provides a simplified API interface to Hal Leonard's Digital Asset Management (DAM) system. This API enables vendors to integrate with Hal Leonard's digital content distribution platform to purchase registrations, download, and manage digital sheet music and other media assets
  *
  * The version of the OpenAPI document: 0.2
  * 
@@ -29,9 +29,11 @@ import PackageItem from './model/PackageItem';
 import PriceItem from './model/PriceItem';
 import PurchaseInProcessingResponse from './model/PurchaseInProcessingResponse';
 import PurchaseRegisterRequest from './model/PurchaseRegisterRequest';
+import PurchaseValidateBeforePaymentRequest from './model/PurchaseValidateBeforePaymentRequest';
 import RelatedGoodItem from './model/RelatedGoodItem';
 import RenderingItem from './model/RenderingItem';
 import UsergenItem from './model/UsergenItem';
+import ValidationToken from './model/ValidationToken';
 import ViewUrl from './model/ViewUrl';
 import AssetsApi from './api/AssetsApi';
 import HealthApi from './api/HealthApi';
@@ -40,18 +42,19 @@ import PurchaseCancelApi from './api/PurchaseCancelApi';
 import PurchaseDownloadUrlApi from './api/PurchaseDownloadUrlApi';
 import PurchaseInfoApi from './api/PurchaseInfoApi';
 import PurchaseRegisterApi from './api/PurchaseRegisterApi';
+import PurchaseValidationApi from './api/PurchaseValidationApi';
 import PurchaseViewUrlApi from './api/PurchaseViewUrlApi';
 
 
 /**
-* HL Connector provides a simplified API interface to Hal Leonard&#39;s Digital Asset Management (DAM) system. This API enables vendors to integrate with Hal Leonard&#39;s digital content distribution platform to purchase registrations, download, and manage digital sheet music and other media assets.<br>
+* HL Connect provides a simplified API interface to Hal Leonard&#39;s Digital Asset Management (DAM) system. This API enables vendors to integrate with Hal Leonard&#39;s digital content distribution platform to purchase registrations, download, and manage digital sheet music and other media assets.<br>
 * The <code>index</code> module provides access to constructors for all the classes which comprise the public API.
 * <p>
 * An AMD (recommended!) or CommonJS application will generally do something equivalent to the following:
 * <pre>
-* var HlConnector = require('index'); // See note below*.
-* var xxxSvc = new HlConnector.XxxApi(); // Allocate the API class we're going to use.
-* var yyyModel = new HlConnector.Yyy(); // Construct a model instance.
+* var HlConnect = require('index'); // See note below*.
+* var xxxSvc = new HlConnect.XxxApi(); // Allocate the API class we're going to use.
+* var yyyModel = new HlConnect.Yyy(); // Construct a model instance.
 * yyyModel.someProperty = 'someValue';
 * ...
 * var zzz = xxxSvc.doSomething(yyyModel); // Invoke the service.
@@ -63,8 +66,8 @@ import PurchaseViewUrlApi from './api/PurchaseViewUrlApi';
 * <p>
 * A non-AMD browser application (discouraged) might do something like this:
 * <pre>
-* var xxxSvc = new HlConnector.XxxApi(); // Allocate the API class we're going to use.
-* var yyy = new HlConnector.Yyy(); // Construct a model instance.
+* var xxxSvc = new HlConnect.XxxApi(); // Allocate the API class we're going to use.
+* var yyy = new HlConnect.Yyy(); // Construct a model instance.
 * yyyModel.someProperty = 'someValue';
 * ...
 * var zzz = xxxSvc.doSomething(yyyModel); // Invoke the service.
@@ -178,6 +181,12 @@ export {
     PurchaseRegisterRequest,
 
     /**
+     * The PurchaseValidateBeforePaymentRequest model constructor.
+     * @property {module:model/PurchaseValidateBeforePaymentRequest}
+     */
+    PurchaseValidateBeforePaymentRequest,
+
+    /**
      * The RelatedGoodItem model constructor.
      * @property {module:model/RelatedGoodItem}
      */
@@ -194,6 +203,12 @@ export {
      * @property {module:model/UsergenItem}
      */
     UsergenItem,
+
+    /**
+     * The ValidationToken model constructor.
+     * @property {module:model/ValidationToken}
+     */
+    ValidationToken,
 
     /**
      * The ViewUrl model constructor.
@@ -242,6 +257,12 @@ export {
     * @property {module:api/PurchaseRegisterApi}
     */
     PurchaseRegisterApi,
+
+    /**
+    * The PurchaseValidationApi service constructor.
+    * @property {module:api/PurchaseValidationApi}
+    */
+    PurchaseValidationApi,
 
     /**
     * The PurchaseViewUrlApi service constructor.

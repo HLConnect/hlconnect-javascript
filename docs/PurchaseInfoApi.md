@@ -1,4 +1,4 @@
-# HlConnector.PurchaseInfoApi
+# HlConnect.PurchaseInfoApi
 
 All URIs are relative to *https://hlconnect-api.mu.se*
 
@@ -19,13 +19,13 @@ Returns detailed information about a purchase order including status, asset deta
 ### Example
 
 ```javascript
-import HlConnector from 'hl_connector';
-let defaultClient = HlConnector.ApiClient.instance;
+import HlConnect from 'hl_connect';
+let defaultClient = HlConnect.ApiClient.instance;
 // Configure Bearer access token for authorization: access_token
 let access_token = defaultClient.authentications['access_token'];
 access_token.accessToken = "YOUR ACCESS TOKEN"
 
-let apiInstance = new HlConnector.PurchaseInfoApi();
+let apiInstance = new HlConnect.PurchaseInfoApi();
 let orderId = 12345; // Number | Vendor order ID to retrieve purchase details for. This is the unique identifier assigned by the vendor when placing the order.
 apiInstance.connectorPurchaseInfo(orderId, (error, data, response) => {
   if (error) {

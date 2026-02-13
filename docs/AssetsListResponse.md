@@ -1,4 +1,4 @@
-# HlConnector.AssetsListResponse
+# HlConnect.AssetsListResponse
 
 ## Properties
 

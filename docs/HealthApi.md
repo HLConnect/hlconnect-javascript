@@ -1,4 +1,4 @@
-# HlConnector.HealthApi
+# HlConnect.HealthApi
 
 All URIs are relative to *https://hlconnect-api.mu.se*
 
@@ -19,9 +19,9 @@ Checks the status of critical system components such as database connections and
 ### Example
 
 ```javascript
-import HlConnector from 'hl_connector';
+import HlConnect from 'hl_connect';
 
-let apiInstance = new HlConnector.HealthApi();
+let apiInstance = new HlConnect.HealthApi();
 apiInstance.health((error, data, response) => {
   if (error) {
     console.error(error);

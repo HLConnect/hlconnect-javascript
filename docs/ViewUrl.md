@@ -1,4 +1,4 @@
-# HlConnector.ViewUrl
+# HlConnect.ViewUrl
 
 ## Properties
 

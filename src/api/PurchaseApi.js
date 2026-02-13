@@ -1,6 +1,6 @@
 /**
- * HL Connector
- * HL Connector provides a simplified API interface to Hal Leonard's Digital Asset Management (DAM) system. This API enables vendors to integrate with Hal Leonard's digital content distribution platform to purchase registrations, download, and manage digital sheet music and other media assets
+ * HL Connect
+ * HL Connect provides a simplified API interface to Hal Leonard's Digital Asset Management (DAM) system. This API enables vendors to integrate with Hal Leonard's digital content distribution platform to purchase registrations, download, and manage digital sheet music and other media assets
  *
  * The version of the OpenAPI document: 0.2
  * 
@@ -19,6 +19,8 @@ import OrderItem from '../model/OrderItem';
 import OrderProcessingFailedResponse from '../model/OrderProcessingFailedResponse';
 import PurchaseInProcessingResponse from '../model/PurchaseInProcessingResponse';
 import PurchaseRegisterRequest from '../model/PurchaseRegisterRequest';
+import PurchaseValidateBeforePaymentRequest from '../model/PurchaseValidateBeforePaymentRequest';
+import ValidationToken from '../model/ValidationToken';
 import ViewUrl from '../model/ViewUrl';
 
 /**
@@ -216,6 +218,48 @@ export default class PurchaseApi {
       let returnType = null;
       return this.apiClient.callApi(
         '/purchase/register', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the connectorPurchaseValidatePurchaseBeforePayment operation.
+     * @callback module:api/PurchaseApi~connectorPurchaseValidatePurchaseBeforePaymentCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/ValidationToken} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Validate purchase before payment
+     * Validates purchase parameters before payment is initiated. Checks asset availability, regional restrictions (based on buyer IP), and minimum quantity requirements. 
+     * @param {module:model/PurchaseValidateBeforePaymentRequest} purchaseValidateBeforePaymentRequest Purchase validation request with asset, buyer IP and quantity
+     * @param {module:api/PurchaseApi~connectorPurchaseValidatePurchaseBeforePaymentCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/ValidationToken}
+     */
+    connectorPurchaseValidatePurchaseBeforePayment(purchaseValidateBeforePaymentRequest, callback) {
+      let postBody = purchaseValidateBeforePaymentRequest;
+      // verify the required parameter 'purchaseValidateBeforePaymentRequest' is set
+      if (purchaseValidateBeforePaymentRequest === undefined || purchaseValidateBeforePaymentRequest === null) {
+        throw new Error("Missing the required parameter 'purchaseValidateBeforePaymentRequest' when calling connectorPurchaseValidatePurchaseBeforePayment");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['access_token'];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = ValidationToken;
+      return this.apiClient.callApi(
+        '/purchase/validate-purchase-before-payment', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );

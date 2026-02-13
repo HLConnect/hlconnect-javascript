@@ -1,4 +1,4 @@
-# HlConnector.RelatedGoodItem
+# HlConnect.RelatedGoodItem
 
 ## Properties
 

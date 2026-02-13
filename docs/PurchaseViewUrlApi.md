@@ -1,4 +1,4 @@
-# HlConnector.PurchaseViewUrlApi
+# HlConnect.PurchaseViewUrlApi
 
 All URIs are relative to *https://hlconnect-api.mu.se*
 
@@ -19,13 +19,13 @@ Generates and returns a secure, time-limited view URL for a purchased digital as
 ### Example
 
 ```javascript
-import HlConnector from 'hl_connector';
-let defaultClient = HlConnector.ApiClient.instance;
+import HlConnect from 'hl_connect';
+let defaultClient = HlConnect.ApiClient.instance;
 // Configure Bearer access token for authorization: access_token
 let access_token = defaultClient.authentications['access_token'];
 access_token.accessToken = "YOUR ACCESS TOKEN"
 
-let apiInstance = new HlConnector.PurchaseViewUrlApi();
+let apiInstance = new HlConnect.PurchaseViewUrlApi();
 let orderId = 12345; // Number | Vendor order ID that contains the asset to view
 let orderLineId = 1; // Number | Specific line item within the order that identifies the asset to view
 apiInstance.connectorPurchaseViewUrl(orderId, orderLineId, (error, data, response) => {

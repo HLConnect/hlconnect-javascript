@@ -1,4 +1,4 @@
-# HlConnector.ErrorResponse
+# HlConnect.ErrorResponse
 
 ## Properties
 

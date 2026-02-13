@@ -1,4 +1,4 @@
-# HlConnector.PurchaseRegisterApi
+# HlConnect.PurchaseRegisterApi
 
 All URIs are relative to *https://hlconnect-api.mu.se*
 
@@ -19,14 +19,14 @@ Initiates the purchase process for a digital asset. Validates request parameters
 ### Example
 
 ```javascript
-import HlConnector from 'hl_connector';
-let defaultClient = HlConnector.ApiClient.instance;
+import HlConnect from 'hl_connect';
+let defaultClient = HlConnect.ApiClient.instance;
 // Configure Bearer access token for authorization: access_token
 let access_token = defaultClient.authentications['access_token'];
 access_token.accessToken = "YOUR ACCESS TOKEN"
 
-let apiInstance = new HlConnector.PurchaseRegisterApi();
-let purchaseRegisterRequest = new HlConnector.PurchaseRegisterRequest(); // PurchaseRegisterRequest | Purchase registration request with asset and order details
+let apiInstance = new HlConnect.PurchaseRegisterApi();
+let purchaseRegisterRequest = new HlConnect.PurchaseRegisterRequest(); // PurchaseRegisterRequest | Purchase registration request with asset and order details
 apiInstance.connectorPurchaseRegister(purchaseRegisterRequest, (error, data, response) => {
   if (error) {
     console.error(error);

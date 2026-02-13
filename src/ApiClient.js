@@ -1,6 +1,6 @@
 /**
- * HL Connector
- * HL Connector provides a simplified API interface to Hal Leonard's Digital Asset Management (DAM) system. This API enables vendors to integrate with Hal Leonard's digital content distribution platform to purchase registrations, download, and manage digital sheet music and other media assets
+ * HL Connect
+ * HL Connect provides a simplified API interface to Hal Leonard's Digital Asset Management (DAM) system. This API enables vendors to integrate with Hal Leonard's digital content distribution platform to purchase registrations, download, and manage digital sheet music and other media assets
  *
  * The version of the OpenAPI document: 0.2
  * 
@@ -596,11 +596,7 @@ class ApiClient {
         return [
             {
               'url': "https://hlconnect-api.mu.se",
-              'description': "LIVE Environment server",
-            },
-            {
-              'url': "http://hlconnect-api-sandbox.mu.se",
-              'description': "SANDBOX Environment server",
+              'description': "Server",
             }
       ];
     }

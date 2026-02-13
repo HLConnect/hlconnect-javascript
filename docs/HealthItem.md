@@ -1,4 +1,4 @@
-# HlConnector.HealthItem
+# HlConnect.HealthItem
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# HlConnector.PurchaseDownloadUrlApi
+# HlConnect.PurchaseDownloadUrlApi
 
 All URIs are relative to *https://hlconnect-api.mu.se*
 
@@ -19,13 +19,13 @@ Generates and returns a secure download URL for a purchased digital asset. The U
 ### Example
 
 ```javascript
-import HlConnector from 'hl_connector';
-let defaultClient = HlConnector.ApiClient.instance;
+import HlConnect from 'hl_connect';
+let defaultClient = HlConnect.ApiClient.instance;
 // Configure Bearer access token for authorization: access_token
 let access_token = defaultClient.authentications['access_token'];
 access_token.accessToken = "YOUR ACCESS TOKEN"
 
-let apiInstance = new HlConnector.PurchaseDownloadUrlApi();
+let apiInstance = new HlConnect.PurchaseDownloadUrlApi();
 let orderId = 12345; // Number | Vendor order ID that contains the asset to download
 let orderLineId = 1; // Number | Specific line item within the order that identifies the asset to download
 apiInstance.connectorPurchaseDownloadUrl(orderId, orderLineId, (error, data, response) => {

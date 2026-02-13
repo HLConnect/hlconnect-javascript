@@ -1,4 +1,4 @@
-# HlConnector.RenderingItem
+# HlConnect.RenderingItem
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# HlConnector.AssetsApi
+# HlConnect.AssetsApi
 
 All URIs are relative to *https://hlconnect-api.mu.se*
 
@@ -19,13 +19,13 @@ Returns a list of digital assets with their complete metadata. Assets include in
 ### Example
 
 ```javascript
-import HlConnector from 'hl_connector';
-let defaultClient = HlConnector.ApiClient.instance;
+import HlConnect from 'hl_connect';
+let defaultClient = HlConnect.ApiClient.instance;
 // Configure Bearer access token for authorization: access_token
 let access_token = defaultClient.authentications['access_token'];
 access_token.accessToken = "YOUR ACCESS TOKEN"
 
-let apiInstance = new HlConnector.AssetsApi();
+let apiInstance = new HlConnect.AssetsApi();
 let opts = {
   'pageSize': 20, // Number | Number of assets to return per page
   'lastId': 56 // Number | The ID of the last asset from the previous page. Used for pagination to retrieve the next page of results.

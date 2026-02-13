@@ -1,4 +1,4 @@
-# HlConnector.AssetPartForm
+# HlConnect.AssetPartForm
 
 ## Properties
 

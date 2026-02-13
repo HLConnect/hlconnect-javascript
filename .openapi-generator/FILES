@@ -25,10 +25,13 @@ docs/PurchaseInProcessingResponse.md
 docs/PurchaseInfoApi.md
 docs/PurchaseRegisterApi.md
 docs/PurchaseRegisterRequest.md
+docs/PurchaseValidateBeforePaymentRequest.md
+docs/PurchaseValidationApi.md
 docs/PurchaseViewUrlApi.md
 docs/RelatedGoodItem.md
 docs/RenderingItem.md
 docs/UsergenItem.md
+docs/ValidationToken.md
 docs/ViewUrl.md
 git_push.sh
 mocha.opts
@@ -41,6 +44,7 @@ src/api/PurchaseCancelApi.js
 src/api/PurchaseDownloadUrlApi.js
 src/api/PurchaseInfoApi.js
 src/api/PurchaseRegisterApi.js
+src/api/PurchaseValidationApi.js
 src/api/PurchaseViewUrlApi.js
 src/index.js
 src/model/AssetItem.js
@@ -59,7 +63,9 @@ src/model/PackageItem.js
 src/model/PriceItem.js
 src/model/PurchaseInProcessingResponse.js
 src/model/PurchaseRegisterRequest.js
+src/model/PurchaseValidateBeforePaymentRequest.js
 src/model/RelatedGoodItem.js
 src/model/RenderingItem.js
 src/model/UsergenItem.js
+src/model/ValidationToken.js
 src/model/ViewUrl.js

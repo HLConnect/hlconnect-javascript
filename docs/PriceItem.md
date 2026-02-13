@@ -1,4 +1,4 @@
-# HlConnector.PriceItem
+# HlConnect.PriceItem
 
 ## Properties
 

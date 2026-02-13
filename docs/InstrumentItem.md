@@ -1,4 +1,4 @@
-# HlConnector.InstrumentItem
+# HlConnect.InstrumentItem
 
 ## Properties
 

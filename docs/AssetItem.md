@@ -1,4 +1,4 @@
-# HlConnector.AssetItem
+# HlConnect.AssetItem
 
 ## Properties
 

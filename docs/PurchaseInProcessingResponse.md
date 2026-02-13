@@ -1,4 +1,4 @@
-# HlConnector.PurchaseInProcessingResponse
+# HlConnect.PurchaseInProcessingResponse
 
 ## Properties
 

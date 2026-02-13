@@ -1,4 +1,4 @@
-# HlConnector.OrderItem
+# HlConnect.OrderItem
 
 ## Properties
 

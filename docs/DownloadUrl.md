@@ -1,4 +1,4 @@
-# HlConnector.DownloadUrl
+# HlConnect.DownloadUrl
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# HlConnector.PackageItem
+# HlConnect.PackageItem
 
 ## Properties
 

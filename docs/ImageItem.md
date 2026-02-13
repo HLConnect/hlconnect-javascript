@@ -1,4 +1,4 @@
-# HlConnector.ImageItem
+# HlConnect.ImageItem
 
 ## Properties
 

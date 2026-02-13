@@ -1,4 +1,4 @@
-# HlConnector.MedleyAssetItem
+# HlConnect.MedleyAssetItem
 
 ## Properties
 

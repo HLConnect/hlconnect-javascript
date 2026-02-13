@@ -1,6 +1,6 @@
 /**
- * HL Connector
- * HL Connector provides a simplified API interface to Hal Leonard's Digital Asset Management (DAM) system. This API enables vendors to integrate with Hal Leonard's digital content distribution platform to purchase registrations, download, and manage digital sheet music and other media assets
+ * HL Connect
+ * HL Connect provides a simplified API interface to Hal Leonard's Digital Asset Management (DAM) system. This API enables vendors to integrate with Hal Leonard's digital content distribution platform to purchase registrations, download, and manage digital sheet music and other media assets
  *
  * The version of the OpenAPI document: 0.2
  * 
@@ -24,18 +24,16 @@ class PurchaseRegisterRequest {
      * Constructs a new <code>PurchaseRegisterRequest</code>.
      * Request payload for registering a new purchase transaction. Contains all required information to initiate the purchase of a digital asset.
      * @alias module:model/PurchaseRegisterRequest
-     * @param assetId {Number} Unique identifier for the digital asset to be purchased. This is Hal Leonard's internal asset ID.
+     * @param token {String} Validation token
      * @param orderNumber {Number} Vendor-generated order number that uniquely identifies this purchase order.
      * @param orderLineId {Number} Line number within the order that identifies this specific item. Used to distinguish multiple items in the same order.
-     * @param countryCode {String} ISO 3166-1 alpha-2 country code identifying the country of sale for the customer.
      * @param lineItemPrice {Number} Price for this specific line item as a real number. Represents the total price for the quantity specified.
      * @param unitPrice {Number} Unit price for a single item as a real number
-     * @param quantity {Number} Quantity of items being purchased in this line item.
      * @param customer {String} Customer name for asset personalization. May be printed on the asset if personalization is supported.
      */
-    constructor(assetId, orderNumber, orderLineId, countryCode, lineItemPrice, unitPrice, quantity, customer) { 
+    constructor(token, orderNumber, orderLineId, lineItemPrice, unitPrice, customer) { 
         
-        PurchaseRegisterRequest.initialize(this, assetId, orderNumber, orderLineId, countryCode, lineItemPrice, unitPrice, quantity, customer);
+        PurchaseRegisterRequest.initialize(this, token, orderNumber, orderLineId, lineItemPrice, unitPrice, customer);
     }
 
     /**
@@ -43,14 +41,12 @@ class PurchaseRegisterRequest {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, assetId, orderNumber, orderLineId, countryCode, lineItemPrice, unitPrice, quantity, customer) { 
-        obj['asset_id'] = assetId;
+    static initialize(obj, token, orderNumber, orderLineId, lineItemPrice, unitPrice, customer) { 
+        obj['token'] = token;
         obj['order_number'] = orderNumber;
         obj['order_line_id'] = orderLineId;
-        obj['country_code'] = countryCode;
         obj['line_item_price'] = lineItemPrice;
         obj['unit_price'] = unitPrice;
-        obj['quantity'] = quantity;
         obj['customer'] = customer;
     }
 
@@ -65,8 +61,8 @@ class PurchaseRegisterRequest {
         if (data) {
             obj = obj || new PurchaseRegisterRequest();
 
-            if (data.hasOwnProperty('asset_id')) {
-                obj['asset_id'] = ApiClient.convertToType(data['asset_id'], 'Number');
+            if (data.hasOwnProperty('token')) {
+                obj['token'] = ApiClient.convertToType(data['token'], 'String');
             }
             if (data.hasOwnProperty('order_number')) {
                 obj['order_number'] = ApiClient.convertToType(data['order_number'], 'Number');
@@ -74,17 +70,11 @@ class PurchaseRegisterRequest {
             if (data.hasOwnProperty('order_line_id')) {
                 obj['order_line_id'] = ApiClient.convertToType(data['order_line_id'], 'Number');
             }
-            if (data.hasOwnProperty('country_code')) {
-                obj['country_code'] = ApiClient.convertToType(data['country_code'], 'String');
-            }
             if (data.hasOwnProperty('line_item_price')) {
                 obj['line_item_price'] = ApiClient.convertToType(data['line_item_price'], 'Number');
             }
             if (data.hasOwnProperty('unit_price')) {
                 obj['unit_price'] = ApiClient.convertToType(data['unit_price'], 'Number');
-            }
-            if (data.hasOwnProperty('quantity')) {
-                obj['quantity'] = ApiClient.convertToType(data['quantity'], 'Number');
             }
             if (data.hasOwnProperty('customer')) {
                 obj['customer'] = ApiClient.convertToType(data['customer'], 'String');
@@ -109,8 +99,8 @@ class PurchaseRegisterRequest {
             }
         }
         // ensure the json data is a string
-        if (data['country_code'] && !(typeof data['country_code'] === 'string' || data['country_code'] instanceof String)) {
-            throw new Error("Expected the field `country_code` to be a primitive type in the JSON string but got " + data['country_code']);
+        if (data['token'] && !(typeof data['token'] === 'string' || data['token'] instanceof String)) {
+            throw new Error("Expected the field `token` to be a primitive type in the JSON string but got " + data['token']);
         }
         // ensure the json data is a string
         if (data['customer'] && !(typeof data['customer'] === 'string' || data['customer'] instanceof String)) {
@@ -133,13 +123,13 @@ class PurchaseRegisterRequest {
 
 }
 
-PurchaseRegisterRequest.RequiredProperties = ["asset_id", "order_number", "order_line_id", "country_code", "line_item_price", "unit_price", "quantity", "customer"];
+PurchaseRegisterRequest.RequiredProperties = ["token", "order_number", "order_line_id", "line_item_price", "unit_price", "customer"];
 
 /**
- * Unique identifier for the digital asset to be purchased. This is Hal Leonard's internal asset ID.
- * @member {Number} asset_id
+ * Validation token
+ * @member {String} token
  */
-PurchaseRegisterRequest.prototype['asset_id'] = undefined;
+PurchaseRegisterRequest.prototype['token'] = undefined;
 
 /**
  * Vendor-generated order number that uniquely identifies this purchase order.
@@ -154,12 +144,6 @@ PurchaseRegisterRequest.prototype['order_number'] = undefined;
 PurchaseRegisterRequest.prototype['order_line_id'] = undefined;
 
 /**
- * ISO 3166-1 alpha-2 country code identifying the country of sale for the customer.
- * @member {String} country_code
- */
-PurchaseRegisterRequest.prototype['country_code'] = undefined;
-
-/**
  * Price for this specific line item as a real number. Represents the total price for the quantity specified.
  * @member {Number} line_item_price
  */
@@ -170,12 +154,6 @@ PurchaseRegisterRequest.prototype['line_item_price'] = undefined;
  * @member {Number} unit_price
  */
 PurchaseRegisterRequest.prototype['unit_price'] = undefined;
-
-/**
- * Quantity of items being purchased in this line item.
- * @member {Number} quantity
- */
-PurchaseRegisterRequest.prototype['quantity'] = undefined;
 
 /**
  * Customer name for asset personalization. May be printed on the asset if personalization is supported.

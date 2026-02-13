@@ -1,4 +1,4 @@
-# HlConnector.OrderProcessingFailedResponse
+# HlConnect.OrderProcessingFailedResponse
 
 ## Properties
 
